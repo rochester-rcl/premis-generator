@@ -74,6 +74,10 @@ This field allows the inclusion of a specific or approximate date on which the p
 This creates the PREMIS *agent* associated with the person specifically doing the preservation action. This need not be an individual person, but the more detail entered here the better. For instance locally we include the name of the person, their title, their department, and the overall organization (e.g. John Dewees, Digital Asset Mangement Lead, Digital Initiatves department, River Campus Libraries, University of Rochester). This could also link out to a department for instance. I strongly recommend you develop a local controlled vocabulary of agent names to utilize for this field, and other similar ones throughout the utility.
 ### Role
 This allows greater specification in who or what executed the preservation action. The options are drawn from the [**Event Related Agent Role**](https://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole.html) controlled vocabulary. Whereas all the other agents in the previous tabs are assumed to be *implementers* this allows for the options of an *authorizer*, *executing program*, or *validator* as well. When in doubt, go with *implementer*.
+## Project Run
+The bottom of the PREMIS Utility is where you will actually start the metadata creation process and will provide live feedback as records are generated.
+### Generate PREMIS Records
+Hitting this button will start the metadata generation process
 # Output Examples
 70ed50ef-923b-4c7c-9ffd-9d6c056d3474.xml
 ```
@@ -273,3 +277,5 @@ Traceback (most recent call last):
 TypeError: 'NoneType' object is not subscriptable
 ```
 This doesn't affect functionality, but I still need to squash that bug at some point.
+-------------------
+The PREMIS Utility will run just fine even if no options are selected, input fields have content, or even an encoding schema is selected. The resulting files will not be particularly useful, but they will be created nonetheless. Including some basic validation to throw up a warning if you click to enable one of the tabs but don't bother to input any data is probably a good idea. If you don't include the path to the CSV file the program just throws up an error and crashes. If you don't include the path to an output folder, it puts the metadata files in the same place you have the program executable itself stored. None of this is ideal and should be handled better in future releases.
