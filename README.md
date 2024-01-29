@@ -36,7 +36,7 @@ This amber button opens up the GitHub repository page for the project (which you
 ## Origin Tab
 The fields present in this tab will not be enabled upton the Enable? checkbox is ticked, indicating that you would like to use this tab. Enabling the tab will allow information to be included on the origin/nature of the digital assets, that is, whether or not they are born digital or digitized resources. This assigns the PREMIS event type of *creation* which is drawn from the [Event Type](https://id.loc.gov/vocabulary/preservation/eventType.html) controlled vocabulary.
 ### Born Digital or Digitized
-This dropdown menu allows for four options taken from the Metadata Object Description Schema (MODS), specifically the [<digitalOrigin> subelement](https://www.loc.gov/standards/mods/userguide/physicaldescription.html#digitalorigin) of the <physicalDescription> element, and uses these terms as a controlled vocabulary. The definitions of the terms are:
+This dropdown menu allows for four options taken from the Metadata Object Description Schema (MODS), specifically the [digitalOrigin subelement](https://www.loc.gov/standards/mods/userguide/physicaldescription.html#digitalorigin) of the <physicalDescription> element, and uses these terms as a controlled vocabulary. The definitions of the terms are:
 + born digital – A resource was created in digital form and is intended to remain in digital form.
 + reformatted digital – A resource that was created by digitizing an original analog resource.
 + digitized microfilm – A resource that was created by digitizing a microform.
