@@ -3,6 +3,7 @@ The PREMIS Utilty is a graphical utility used to generate [PREMIS](https://www.l
 + Unambigious assertion of whether the resource is born digital or digitized
 + Rights related information about the resource, such as if the intellectual content is in the public domain or protected by copyright
 + Information about any digital preservation activities happening outside the software platform, such as manual migrations
+
 The graphical utility was created to make the creation of these records easier and more approachable for librarians, archivists, and other cultural heritage workers that may not be comfortable in the command line or know Python. The overall workflow is that a list of identifiers are provided to the utility, selections are made in the interface and information is provided, and ultimately it spits out XML or JSON files that each have that identifier as the filename. The idea here is that while I don't have any notion what system you might be working within, you should hopefully have a means of using that identifier in the filename to link up or import the metadata into your system.
 
 Currently this utility is only packaged as an .exe for Windows computers. If you are comfortable with some Python you should be able use the raw Python files (after installing the nonstandard Python libraries listed below) to run the graphical utility in a Linux or MacOS environment. If there are Linux/MacOS users out there that would like to help me create packages for those operating systems, I'm super game.
