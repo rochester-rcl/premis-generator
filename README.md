@@ -23,11 +23,11 @@ The utility was created entirely in Python, specifically version 3.11.7. The lis
   + PySimpleGUI
   + xmltodict
 # Interface Overview
-This documentation will cover every field and element present in the PREMIS Utility to describe what its purpose is and how to use it properly. One important point to note that will be consistent throughout this documentation: this program does no data validation whatsoever. Whatever you type into a free text field will be entered into the XML/JSON just as you typed it.
+This documentation will cover every field and element present in the PREMIS Utility to describe what its purpose is and how to use it properly. One important point to note, and this will be consistent throughout this documentation: *this program does no data validation whatsoever*. Whatever you type into a free text field will be entered into the XML/JSON just as you typed it.
 ## Project Setup
-The top section of the utility contains the fields used to set up the metadata creation job before we get into the content be saved in the metadata itself.
+The top section of the utility contains the fields used to set up the metadata creation job before we get into the content to be saved in the metadata itself.
 ### ID CSV
-This field contains the path to the CSV file that stores the list of identifiers that will be embedded in the PREMIS metadata as well as act as the filename. You can click on the yellow Browse button to open a file explorer to navigate to the appropriate CSV file to select it and the intput field to the left of the Browse button will then hold the path. The file explorer is set up to only display *.csv files to make it easier to find and navigate to them. The CSV file should be formatted so the identifiers are in the first column of the spreadsheet (A1, A2, A3...).
+This field contains the path to the CSV file that stores the list of identifiers that will be embedded in the PREMIS metadata as well as acting as the filename. You can click on the yellow Browse button to open a file explorer to navigate to the appropriate CSV file to select it and the intput field to the left of the Browse button will then hold the path. The file explorer is set up to only display *.csv files to make it easier to find and navigate to them. The CSV file should be formatted so the identifiers are in the first column of the spreadsheet (A1, A2, A3...).
 ### Output Folder
 This selects where you would like the newly created PREMIS metadata records to be stored. Similar to the above, you can click on the yellow Browse button to open a folder explorer to navigate to the appropriate folder. When you do, the folder path will appear in the input to the left of the Browse button.
 ### Encoding for Output
