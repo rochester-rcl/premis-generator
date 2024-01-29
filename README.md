@@ -73,6 +73,197 @@ This field allows the inclusion of a specific or approximate date on which the p
 This creates the PREMIS *agent* associated with the person specifically doing the preservation action. This need not be an individual person, but the more detail entered here the better. For instance locally we include the name of the person, their title, their department, and the overall organization (e.g. John Dewees, Digital Asset Mangement Lead, Digital Initiatves department, River Campus Libraries, University of Rochester). This could also link out to a department for instance. I strongly recommend you develop a local controlled vocabulary of agent names to utilize for this field, and other similar ones throughout the utility.
 ### Role
 This allows greater specification in who or what executed the preservation action. The options are drawn from the [**Event Related Agent Role**](https://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole.html) controlled vocabulary. Whereas all the other agents in the previous tabs are assumed to be *implementers* this allows for the options of an *authorizer*, *executing program*, or *validator* as well. When in doubt, go with *implementer*.
+# Output Examples
+70ed50ef-923b-4c7c-9ffd-9d6c056d3474.xml
+```
+<premis:premis xmlns:premis="http://www.loc.gov/premis/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/premis/v3 https://www.loc.gov/standards/premis/premis.xsd" version="3.0">
+    <premis:object xsi:type="premis:intellectualEntity">
+        <premis:objectIdentifier>
+            <premis:objectIdentifierType>system_identifier</premis:objectIdentifierType>
+            <premis:objectIdentifierValue>70ed50ef-923b-4c7c-9ffd-9d6c056d3474</premis:objectIdentifierValue>
+        </premis:objectIdentifier>
+    </premis:object>
+	<premis:event>
+        <premis:eventIdentifier>
+            <premis:eventIdentifierType>event_uuid</premis:eventIdentifierType>
+            <premis:eventIdentifierValue>f49af9a1-0817-4266-a7bd-16922baadcd2</premis:eventIdentifierValue>
+        </premis:eventIdentifier>
+        <premis:eventType>creation</premis:eventType>
+        <premis:eventDateTime>2021-12-08</premis:eventDateTime>
+        <premis:eventDetailInformation>
+            <premis:eventDetail>reformatted digital</premis:eventDetail>
+        </premis:eventDetailInformation>
+        <premis:linkingAgentIdentifier>
+            <premis:linkingAgentIdentifierType>local</premis:linkingAgentIdentifierType>
+            <premis:linkingAgentIdentifierValue>Jane Smith, A/V Preservation Librarian, Special Collections, University of Old York</premis:linkingAgentIdentifierValue>
+            <premis:linkingAgentRole authority="eventRelatedAgentRole" authorityURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole" valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+        </premis:linkingAgentIdentifier>
+        <premis:linkingObjectIdentifier>
+            <premis:linkingObjectIdentifierType>system_identifier</premis:linkingObjectIdentifierType>
+            <premis:linkingObjectIdentifierValue>70ed50ef-923b-4c7c-9ffd-9d6c056d3474</premis:linkingObjectIdentifierValue>
+        </premis:linkingObjectIdentifier>
+    </premis:event>
+	<premis:rights>
+        <premis:rightsStatement>
+            <premis:rightsStatementIdentifier>
+                <premis:rightsStatementIdentifierType>event_uuid</premis:rightsStatementIdentifierType>
+                <premis:rightsStatementIdentifierValue>c1872789-3c69-447f-a257-b99a5c63f1be</premis:rightsStatementIdentifierValue>
+            </premis:rightsStatementIdentifier>
+            <premis:rightsBasis authority="rightsBasis" authorityURI="http://id.loc.gov/vocabulary/preservation/rightsBasis" valueURI="http://id.loc.gov/vocabulary/preservation/rightsBasis/cop">copyright</premis:rightsBasis>
+            <premis:copyrightInformation>
+                <premis:copyrightStatus>publicdomain</premis:copyrightStatus>
+                <premis:copyrightJurisdiction>us</premis:copyrightJurisdiction>
+                <premis:copyrightStatusDeterminationDate>2024-01-02</premis:copyrightStatusDeterminationDate>
+                <premis:copyrightNote>This work was determined to have fallen into the public domain on January 1, 2021 due to the passage of 70 years past the creators death. Please find more information on this determination in the relevant documentation: copyright_determination_205468.docx</premis:copyrightNote>
+                <premis:copyrightDocumentationIdentifier>
+                    <premis:copyrightDocumentationIdentifierType>Rights Statement: No Copyright - United States</premis:copyrightDocumentationIdentifierType>
+                    <premis:copyrightDocumentationIdentifierValue>http://rightsstatements.org/vocab/NoC-US/1.0/</premis:copyrightDocumentationIdentifierValue>
+                </premis:copyrightDocumentationIdentifier>
+            </premis:copyrightInformation>
+            <premis:linkingAgentIdentifier>
+                <premis:linkingAgentIdentifierType>local</premis:linkingAgentIdentifierType>
+                <premis:linkingAgentIdentifierValue>Trudy Mills, Copyright Librarian, Copyright Clearance Center, University of Old York</premis:linkingAgentIdentifierValue>
+                <premis:linkingAgentRole authority="eventRelatedAgentRole" authorityURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole" valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+            </premis:linkingAgentIdentifier>
+            <premis:linkingObjectIdentifier>
+                <premis:linkingObjectIdentifierType>system_identifier</premis:linkingObjectIdentifierType>
+                <premis:linkingObjectIdentifierValue>70ed50ef-923b-4c7c-9ffd-9d6c056d3474</premis:linkingObjectIdentifierValue>
+            </premis:linkingObjectIdentifier>
+        </premis:rightsStatement>
+    </premis:rights>
+	<premis:event>
+        <premis:eventIdentifier>
+            <premis:eventIdentifierType>event_uuid</premis:eventIdentifierType>
+            <premis:eventIdentifierValue>dfce32dc-c0ea-4433-a5b0-568a95a49128</premis:eventIdentifierValue>
+        </premis:eventIdentifier>
+        <premis:eventType>normalization</premis:eventType>
+        <premis:eventDateTime>2024-01-20</premis:eventDateTime>
+        <premis:eventDetailInformation>
+            <premis:eventDetail>These files were normalized manually from a proprietary video format into standard uncompressed video files.</premis:eventDetail>
+        </premis:eventDetailInformation>
+        <premis:linkingAgentIdentifier>
+            <premis:linkingAgentIdentifierType>local</premis:linkingAgentIdentifierType>
+            <premis:linkingAgentIdentifierValue>Stacy Archer, Digital Preservation Librarian, Digital Initiatives Department, University of Old York</premis:linkingAgentIdentifierValue>
+            <premis:linkingAgentRole authority="eventRelatedAgentRole" authorityURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole" valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+        </premis:linkingAgentIdentifier>
+        <premis:linkingObjectIdentifier>
+            <premis:linkingObjectIdentifierType>system_identifier</premis:linkingObjectIdentifierType>
+            <premis:linkingObjectIdentifierValue>70ed50ef-923b-4c7c-9ffd-9d6c056d3474</premis:linkingObjectIdentifierValue>
+        </premis:linkingObjectIdentifier>
+    </premis:event>
+</premis:premis>
+```
+70ed50ef-923b-4c7c-9ffd-9d6c056d3474.json
+```
+{
+    "http://www.loc.gov/premis/v3:premis": {
+        "@http://www.w3.org/2001/XMLSchema-instance:schemaLocation": "http://www.loc.gov/premis/v3 https://www.loc.gov/standards/premis/premis.xsd",
+        "@version": "3.0",
+        "@xmlns": {
+            "premis": "http://www.loc.gov/premis/v3",
+            "xlink": "http://www.w3.org/1999/xlink",
+            "xsi": "http://www.w3.org/2001/XMLSchema-instance"
+        },
+        "http://www.loc.gov/premis/v3:object": {
+            "@http://www.w3.org/2001/XMLSchema-instance:type": "premis:intellectualEntity",
+            "http://www.loc.gov/premis/v3:objectIdentifier": {
+                "http://www.loc.gov/premis/v3:objectIdentifierType": "system_identifier",
+                "http://www.loc.gov/premis/v3:objectIdentifierValue": "70ed50ef-923b-4c7c-9ffd-9d6c056d3474"
+            }
+        },
+        "http://www.loc.gov/premis/v3:event": [
+            {
+                "http://www.loc.gov/premis/v3:eventIdentifier": {
+                    "http://www.loc.gov/premis/v3:eventIdentifierType": "event_uuid",
+                    "http://www.loc.gov/premis/v3:eventIdentifierValue": "2294cb91-e474-47bb-8627-21a2277b1aa4"
+                },
+                "http://www.loc.gov/premis/v3:eventType": "creation",
+                "http://www.loc.gov/premis/v3:eventDateTime": "2021-12-08",
+                "http://www.loc.gov/premis/v3:eventDetailInformation": {
+                    "http://www.loc.gov/premis/v3:eventDetail": "reformatted digital"
+                },
+                "http://www.loc.gov/premis/v3:linkingAgentIdentifier": {
+                    "http://www.loc.gov/premis/v3:linkingAgentIdentifierType": "local",
+                    "http://www.loc.gov/premis/v3:linkingAgentIdentifierValue": "Jane Smith, A/V Preservation Librarian, Special Collections, University of Old York",
+                    "http://www.loc.gov/premis/v3:linkingAgentRole": {
+                        "@authority": "eventRelatedAgentRole",
+                        "@authorityURI": "http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole",
+                        "@valueURI": "http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp",
+                        "#text": "implementer"
+                    }
+                },
+                "http://www.loc.gov/premis/v3:linkingObjectIdentifier": {
+                    "http://www.loc.gov/premis/v3:linkingObjectIdentifierType": "system_identifier",
+                    "http://www.loc.gov/premis/v3:linkingObjectIdentifierValue": "70ed50ef-923b-4c7c-9ffd-9d6c056d3474"
+                }
+            },
+            {
+                "http://www.loc.gov/premis/v3:eventIdentifier": {
+                    "http://www.loc.gov/premis/v3:eventIdentifierType": "event_uuid",
+                    "http://www.loc.gov/premis/v3:eventIdentifierValue": "b9de946d-267b-4c5b-a6ee-3ad689d38494"
+                },
+                "http://www.loc.gov/premis/v3:eventType": "normalization",
+                "http://www.loc.gov/premis/v3:eventDateTime": "2024-01-20",
+                "http://www.loc.gov/premis/v3:eventDetailInformation": {
+                    "http://www.loc.gov/premis/v3:eventDetail": "These files were normalized manually from a proprietary video format into standard uncompressed video files."
+                },
+                "http://www.loc.gov/premis/v3:linkingAgentIdentifier": {
+                    "http://www.loc.gov/premis/v3:linkingAgentIdentifierType": "local",
+                    "http://www.loc.gov/premis/v3:linkingAgentIdentifierValue": "Stacy Archer, Digital Preservation Librarian, Digital Initiatives Department, University of Old York",
+                    "http://www.loc.gov/premis/v3:linkingAgentRole": {
+                        "@authority": "eventRelatedAgentRole",
+                        "@authorityURI": "http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole",
+                        "@valueURI": "http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp",
+                        "#text": "implementer"
+                    }
+                },
+                "http://www.loc.gov/premis/v3:linkingObjectIdentifier": {
+                    "http://www.loc.gov/premis/v3:linkingObjectIdentifierType": "system_identifier",
+                    "http://www.loc.gov/premis/v3:linkingObjectIdentifierValue": "70ed50ef-923b-4c7c-9ffd-9d6c056d3474"
+                }
+            }
+        ],
+        "http://www.loc.gov/premis/v3:rights": {
+            "http://www.loc.gov/premis/v3:rightsStatement": {
+                "http://www.loc.gov/premis/v3:rightsStatementIdentifier": {
+                    "http://www.loc.gov/premis/v3:rightsStatementIdentifierType": "event_uuid",
+                    "http://www.loc.gov/premis/v3:rightsStatementIdentifierValue": "ed9190da-ac9e-4017-b78d-6bd1b346f262"
+                },
+                "http://www.loc.gov/premis/v3:rightsBasis": {
+                    "@authority": "rightsBasis",
+                    "@authorityURI": "http://id.loc.gov/vocabulary/preservation/rightsBasis",
+                    "@valueURI": "http://id.loc.gov/vocabulary/preservation/rightsBasis/cop",
+                    "#text": "copyright"
+                },
+                "http://www.loc.gov/premis/v3:copyrightInformation": {
+                    "http://www.loc.gov/premis/v3:copyrightStatus": "publicdomain",
+                    "http://www.loc.gov/premis/v3:copyrightJurisdiction": "us",
+                    "http://www.loc.gov/premis/v3:copyrightStatusDeterminationDate": "2024-01-02",
+                    "http://www.loc.gov/premis/v3:copyrightNote": "This work was determined to have fallen into the public domain on January 1, 2021 due to the passage of 70 years past the creators death. Please find more information on this determination in the relevant documentation: copyright_determination_205468.docx",
+                    "http://www.loc.gov/premis/v3:copyrightDocumentationIdentifier": {
+                        "http://www.loc.gov/premis/v3:copyrightDocumentationIdentifierType": "Rights Statement: No Copyright - United States",
+                        "http://www.loc.gov/premis/v3:copyrightDocumentationIdentifierValue": "http://rightsstatements.org/vocab/NoC-US/1.0/"
+                    }
+                },
+                "http://www.loc.gov/premis/v3:linkingAgentIdentifier": {
+                    "http://www.loc.gov/premis/v3:linkingAgentIdentifierType": "local",
+                    "http://www.loc.gov/premis/v3:linkingAgentIdentifierValue": "Trudy Mills, Copyright Librarian, Copyright Clearance Center, University of Old York",
+                    "http://www.loc.gov/premis/v3:linkingAgentRole": {
+                        "@authority": "eventRelatedAgentRole",
+                        "@authorityURI": "http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole",
+                        "@valueURI": "http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp",
+                        "#text": "implementer"
+                    }
+                },
+                "http://www.loc.gov/premis/v3:linkingObjectIdentifier": {
+                    "http://www.loc.gov/premis/v3:linkingObjectIdentifierType": "system_identifier",
+                    "http://www.loc.gov/premis/v3:linkingObjectIdentifierValue": "70ed50ef-923b-4c7c-9ffd-9d6c056d3474"
+                }
+            }
+        }
+    }
+}
+```
 # Known Issues
 When hitting the Close Window/"X" button in the top right of the screen, the following error is displayed:
 ```
