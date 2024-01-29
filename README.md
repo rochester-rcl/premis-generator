@@ -77,7 +77,7 @@ This allows greater specification in who or what executed the preservation actio
 ## Project Run
 The bottom of the PREMIS Utility is where you will actually start the metadata creation process and will provide live feedback as records are generated.
 ### Generate PREMIS Records
-Hitting this button will start the metadata generation process and start spitting out PREMIS records. Once the process completes a popup will appear letting the user know how many records were created and were they were output to.
+Hitting this button will start the metadata generation process and start spitting out PREMIS records. Once the process completes a popup will appear letting the user know how many records were created and where they were output to.
 ### Progress Bar
 The rectangle to the right of the *Generate PREMIS Records* button is a progross bar that will fill up with an amber colored bar as records are created. It will turn green when complete.
 ### About
