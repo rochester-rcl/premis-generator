@@ -26,7 +26,7 @@ sg.set_options(font='Courier 12')
 sg.theme_add_new('VSC Theme', vsc_theme)
 sg.theme('VSC Theme')
 
-origin_list = ['Digitized - Microfilm', 'Digitized - Everything Else', 'Born Digital']
+origin_list = ['born digital', 'reformatted digital', 'digitized microfilm', 'digitized other analog']
 
 tab1 = sg.Tab('Origin', [
     [sg.Checkbox('Enable?', enable_events=True, key='-ORIGIN_CB-')],
@@ -46,7 +46,7 @@ tab2 = sg.Tab('Rights', [
     [sg.Text('Determined By:'), sg.Input(size=42, disabled=True, background_color=alt_background, key='-DETERMININER-')]
 ], key='-TAB_2-')
 
-action_list = ['accession', 'appraisal', 'capture', 'compression', 'deaccession', 'decompression', 'decryption', 'deletion', 'digital signature generation', 'digital signature validation', 'displaying', 'dissemination', 'encryption', 'execution', 'exporting', 'extraction', 'filename change', 'fixity check', 'forensic feature analysis', 'format identification', 'imaging', 'information package creation', 'information package merging', 'information package splitting', 'ingestion', 'ingestion end', 'ingestion start', 'interpreting', 'message digest calculation', 'metadata extraction', 'metadata modification', 'migration', 'modification', 'normalization', 'packing', 'policy assignment', 'printing', 'quarantine', 'recovery', 'redaction', 'refreshment', 'rendering', 'replication', 'transfer', 'unpacking', 'unquarantine', 'validation', 'virus check']
+action_list = ['accession', 'appraisal', 'capture', 'compiling', 'compression', 'deaccession', 'decompression', 'decryption', 'deletion', 'digital signature generation', 'digital signature validation', 'displaying', 'dissemination', 'encryption', 'execution', 'exporting', 'extraction', 'filename change', 'fixity check', 'forensic feature analysis', 'format identification', 'imaging', 'information package creation', 'information package merging', 'information package splitting', 'ingestion', 'ingestion end', 'ingestion start', 'interpreting', 'message digest calculation', 'metadata extraction', 'metadata modification', 'migration', 'modification', 'normalization', 'packing', 'policy assignment', 'printing', 'quarantine', 'recovery', 'redaction', 'refreshment', 'rendering', 'replication', 'transfer', 'unpacking', 'unquarantine', 'validation', 'virus check']
 
 role_list = ['authorizer', 'executing program', 'implementer', 'validator']
 
@@ -95,7 +95,7 @@ progress_bar = window['-PROGRESS_BAR-']
 status_bar = window['-STATUS_BAR-']
 
 about_text = '''Created by: John Dewees
-Version: 1.0
+Version: 1.1.0
 Last Updated: 2024-01-29
 Email: john.dewees@rochester.edu
 code4lib Slack: @John Dewees'''
@@ -161,7 +161,7 @@ while True:
             premis_xml = premis_header + premis_origin_section + premis_rights_section + premis_action_section + premis_footer
             phand = open(os.path.join(output_folder, id + '.' + encoding.lower()), 'w')
             if encoding == 'JSON':
-                data_dict = xmltodict.parse(premis_xml)
+                data_dict = xmltodict.parse(premis_xml, process_namespaces=True)
                 premis_json = json.dumps(data_dict, indent=4)
                 phand.write(premis_json)
             else:
