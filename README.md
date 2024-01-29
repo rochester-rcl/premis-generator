@@ -8,6 +8,8 @@ The graphical utility was created to make the creation of these records easier a
 Currently this utility is only packaged as an .exe for Windows computers. If you are comfortable with some Python you should be able use the raw Python files (after installing the nonstandard Python libraries listed below) to run the graphical utility in a Linux or MacOS environment. If there are Linux/MacOS users out there that would like to help me create packages for those operating systems, I'm super game.
 
 Additionally this utility is designed and meant for a United States locality. A big part of this tool relates to copyright, and while I am not a lawyer and the utility in graphical format or code and the metadata records that it exports absolutely do not constitute legal advice, I do have training in US copyright law and am leveraging that for the tool. I do not however have any non-US copyright training, so this will be of very limited use outside the United States.
+
+The **premis_generator.py** file is the starting point for this entire project and is a standalone script that can take data from a CSV and input it into a multiline string template in a Python script and spit out PREMIS XML records. It is available for context and should you wish to embed that in your own script work, rather than utilizing a graphical utility.
 # Python Environment and Libraries
 The utility was created entirely in Python, specifically version 3.11.7. The list of libraries used in the development was:
 + Standard Python Libraries
