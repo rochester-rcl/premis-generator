@@ -279,5 +279,5 @@ This utility-wide rectangle will update to show which record is being created as
 ```
 # Known Issues
 Ongoing issues and enhancements that need to be added are listed below to let folks know what is on the roadmap.
-
-None currently
+## Basic Input Validation
+The PREMIS Utility will run just fine even if no options are selected, input fields have content, or even an encoding schema is selected. The resulting files will not be particularly useful, but they will be created nonetheless. Including some basic validation to throw up a warning if you click to enable one of the tabs but don't bother to input any data is probably a good idea. If you don't include the path to the CSV file the program just throws up an error and crashes. If you don't include the path to an output folder, it puts the metadata files in the same place you have the program executable itself stored. None of this is ideal and should be handled better in future releases.
