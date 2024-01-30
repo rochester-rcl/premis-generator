@@ -30,7 +30,7 @@ origin_list = ['born digital', 'reformatted digital', 'digitized microfilm', 'di
 
 tab1 = sg.Tab('Origin', [
     [sg.Checkbox('Enable?', enable_events=True, key='-ORIGIN_CB-')],
-    [sg.Text('Born Digital or Digitized:'), sg.Combo(origin_list, readonly=True, disabled=True, background_color=alt_background, key='-BD_DIGIT-')],
+    [sg.Text('Born Digital or Digitized:'), sg.Combo(origin_list, default_value='born digital', readonly=True, disabled=True, background_color=alt_background, key='-BD_DIGIT-')],
     [sg.Text('Date Created:'), sg.Input(tooltip='YYYY-MM-DD, YYYY-MM, or YYYY', disabled=True, size=30, background_color=alt_background, key='-DATE_CREATED-'), sg.CalendarButton('Date Picker', format='%Y-%m-%d', disabled=True, key='-DATE_CREATED_BUTTON-')],
     [sg.Text('Created By:'), sg.Input(tooltip='This can the creator of a born digital resource or the person or organization that digitized it', disabled=True, background_color=alt_background, key='-CREATOR-')]
 ], key='-TAB_1-')
@@ -52,11 +52,11 @@ role_list = ['authorizer', 'executing program', 'implementer', 'validator']
 
 tab3 = sg.Tab('Actions', [
     [sg.Checkbox('Enable?', enable_events=True, key='-ACTION_CB-')],
-    [sg.Text('Event Type:'), sg.Combo(action_list, readonly=True, disabled=True, background_color=alt_background, key='-EVENT_TYPE-')],
+    [sg.Text('Event Type:'), sg.Combo(action_list, default_value='accession', readonly=True, disabled=True, background_color=alt_background, key='-EVENT_TYPE-')],
     [sg.Text('Notes:'), sg.Multiline(size=(49, 5), disabled=True, background_color=alt_background, key='-EVENT_INFO-')],
     [sg.Text('Date Executed:'), sg.Input(disabled=True, size=30, background_color=alt_background, key='-DATE_EXECUTED-'), sg.CalendarButton('Date Picker', format='%Y-%m-%d', disabled=True, key='-DATE_EXECUTED_BUTTON-')],
     [sg.Text('Executed By:'), sg.Input(disabled=True, background_color=alt_background, key='-EXECUTER-')],
-    [sg.Text('Role:'), sg.Combo(role_list, readonly=True, disabled=True, key='-ROLE-')]
+    [sg.Text('Role:'), sg.Combo(role_list, default_value='implementer', readonly=True, disabled=True, key='-ROLE-')]
 ], key='-TAB_3-')
 
 tab_group = sg.TabGroup([
@@ -65,9 +65,9 @@ tab_group = sg.TabGroup([
 
 layout = [[sg.Text('ID CSV:'), sg.Input(size=42, background_color=alt_background, key='-CSV_PATH-'), sg.FileBrowse(file_types=(('ID List', '*.csv'),), key='-FILE_BROWSE_BUTTON-')],
     [sg.Text('Output Folder:'), sg.Input(size=35, background_color=alt_background, key='-OUTPUT-'), sg.FolderBrowse(key='-FOLDER_BROWSE_BUTTON-')],
-    [sg.Text('Encoding for Output:'), sg.Combo(['XML', 'JSON'], readonly=True, key='-ENCODING-'), sg.Push(), sg.Button('GitHub Repo', button_color=('#ffaf5f', alt_background), key='-GITHUB-')],
+    [sg.Text('Encoding for Output:'), sg.Combo(['XML', 'JSON'], default_value='XML', readonly=True, key='-ENCODING-'), sg.Push(), sg.Button('GitHub Repo', button_color=('#ffaf5f', alt_background), key='-GITHUB-')],
     [tab_group],
-    [sg.Button('Generate PREMIS Records', tooltip="LET'S GOOOOOOOOOO", font=big_font, key='-LETS_GOOOO-'), sg.ProgressBar(max_value=1, size=(14, 30), bar_color=('#ffaf5f', alt_background), key='-PROGRESS_BAR-'), sg.Button('About', key='-ABOUT-'), sg.Button('Exit', key='-EXIT-')],
+    [sg.Button('Generate PREMIS Records', tooltip="LET'S GOOOOOOOOOO", font=big_font, key='-LETS_GOOOO-'), sg.ProgressBar(max_value=1, size=(17, 30), bar_color=('#ffaf5f', alt_background), key='-PROGRESS_BAR-'), sg.Button('About', key='-ABOUT-'), sg.Button('Exit', key='-EXIT-')],
     [sg.Text(expand_x=True, text_color='#ffaf5f', background_color=alt_background, key='-STATUS_BAR-')]
 ]
 
@@ -95,13 +95,15 @@ progress_bar = window['-PROGRESS_BAR-']
 status_bar = window['-STATUS_BAR-']
 
 about_text = '''Created by: John Dewees
-Version: 1.1.0
+Version: 1.1.1
 Last Updated: 2024-01-29
 Email: john.dewees@rochester.edu
 code4lib Slack: @John Dewees'''
 
 while True:
     event, values = window.read()
+    if event in (sg.WIN_CLOSED, '-EXIT-', 'Exit', 'Quit'):
+        break    
     csv_path = values['-CSV_PATH-']
     output_folder = values['-OUTPUT-']
     encoding = values['-ENCODING-']
@@ -118,8 +120,7 @@ while True:
     date_executed_value = values['-DATE_EXECUTED-']
     executor_value = values['-EXECUTER-']
     role_value = values['-ROLE-']
-    if event in (sg.WIN_CLOSED, '-EXIT-', 'Exit', 'Quit'):
-        break
+    window.refresh()
     if event == '-ORIGIN_CB-' and values['-ORIGIN_CB-'] == True:
         origin_enable(bd_digit, date_created, date_created_button, creator)
     if event == '-ORIGIN_CB-' and values['-ORIGIN_CB-'] == False:
@@ -173,6 +174,7 @@ while True:
             window.refresh()
         progress_bar.update(bar_color=('#5dd495', alt_background))
         sg.popup_ok('Created {count} PREMIS records in:\n\n{directory}\n\nPlease enjoy your newly created preservation metadata.'.format(count=count, directory=output_folder), title='Metadata Generated')
+        os.startfile(output_folder)
         status_bar.update(value='')
         enable_all(values, window, event_type, event_info, date_executed, date_executed_button, executer, role, bd_digit, date_created, date_created_button, creator, rights_basis, date_determ, date_determ_button, terms, rights_notes, determiner)
 window.close()
