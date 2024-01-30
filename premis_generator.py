@@ -9,20 +9,20 @@ count = 0
 for row in csv_reader:
     count += 1
     preservica_uuid = row[0]
-        rights_uuid = uuid.uuid4()
-        rights_basis = row[1]
-        rights_status = row[2]
-        rights_jurisdiction = row[3]
-        rights_date = row[4]
-        rights_note = row[5]
-        rights_doc_text = row[6]
-        rights_doc_uri = row[7]
-        event_1_uuid = uuid.uuid4()
-        event_1_type = row[8]
-        event_1_datetime = row[9]
-        event_1_details = row[10]
-        event_1_agent = row[11]
-        premis = '''<premis:premis xmlns:premis="http://www.loc.gov/premis/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/premis/v3 https://www.loc.gov/standards/premis/premis.xsd" version="3.0">
+    rights_uuid = uuid.uuid4()
+    rights_basis = row[1]
+    rights_status = row[2]
+    rights_jurisdiction = row[3]
+    rights_date = row[4]
+    rights_note = row[5]
+    rights_doc_text = row[6]
+    rights_doc_uri = row[7]
+    event_1_uuid = uuid.uuid4()
+    event_1_type = row[8]
+    event_1_datetime = row[9]
+    event_1_details = row[10]
+    event_1_agent = row[11]
+    premis = '''<premis:premis xmlns:premis="http://www.loc.gov/premis/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/premis/v3 https://www.loc.gov/standards/premis/premis.xsd" version="3.0">
         <premis:object xsi:type="premis:intellectualEntity">
             <premis:objectIdentifier>
                 <premis:objectIdentifierType>preservica_uuid</premis:objectIdentifierType>
