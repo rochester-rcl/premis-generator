@@ -95,8 +95,8 @@ progress_bar = window['-PROGRESS_BAR-']
 status_bar = window['-STATUS_BAR-']
 
 about_text = '''Created by: John Dewees
-Version: 1.1.1
-Last Updated: 2024-01-29
+Version: 1.1.2
+Last Updated: 2024-01-30
 Email: john.dewees@rochester.edu
 code4lib Slack: @John Dewees'''
 
