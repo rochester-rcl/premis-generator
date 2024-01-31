@@ -63,8 +63,8 @@ tab_group = sg.TabGroup([
     [tab1, tab2, tab3]
 ], pad=((3, 3), (5, 5)), key='-TAB_GROUP-')
 
-layout = [[sg.Text('ID CSV:'), sg.Input(size=42, background_color=alt_background, key='-CSV_PATH-'), sg.FileBrowse(file_types=(('ID List', '*.csv'),), key='-FILE_BROWSE_BUTTON-')],
-    [sg.Text('Output Folder:'), sg.Input(size=35, background_color=alt_background, key='-OUTPUT-'), sg.FolderBrowse(key='-FOLDER_BROWSE_BUTTON-')],
+layout = [[sg.Text('ID CSV:'), sg.Input(size=43, background_color=alt_background, key='-CSV_PATH-'), sg.FileBrowse(file_types=(('ID List', '*.csv'),), key='-FILE_BROWSE_BUTTON-')],
+    [sg.Text('Output Folder:'), sg.Input(size=36, background_color=alt_background, key='-OUTPUT-'), sg.FolderBrowse(key='-FOLDER_BROWSE_BUTTON-')],
     [sg.Text('Encoding for Output:'), sg.Combo(['XML', 'JSON'], default_value='XML', readonly=True, key='-ENCODING-'), sg.Push(), sg.Button('GitHub Repo', button_color=('#ffaf5f', alt_background), key='-GITHUB-')],
     [tab_group],
     [sg.Button('Generate PREMIS Records', tooltip="LET'S GOOOOOOOOOO", font=big_font, key='-LETS_GOOOO-'), sg.ProgressBar(max_value=1, size=(17, 30), bar_color=('#ffaf5f', alt_background), key='-PROGRESS_BAR-'), sg.Button('About', key='-ABOUT-'), sg.Button('Exit', key='-EXIT-')],
