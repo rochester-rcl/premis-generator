@@ -67,7 +67,7 @@ layout = [[sg.Text('ID CSV:'), sg.Input(size=43, background_color=alt_background
     [sg.Text('Output Folder:'), sg.Input(size=36, background_color=alt_background, key='-OUTPUT-'), sg.FolderBrowse(key='-FOLDER_BROWSE_BUTTON-')],
     [sg.Text('Encoding for Output:'), sg.Combo(['XML', 'JSON'], default_value='XML', readonly=True, key='-ENCODING-'), sg.Push(), sg.Button('GitHub Repo', button_color=('#ffaf5f', alt_background), key='-GITHUB-')],
     [tab_group],
-    [sg.Button('Generate PREMIS Records', tooltip="LET'S GOOOOOOOOOO", font=big_font, key='-LETS_GOOOO-'), sg.ProgressBar(max_value=1, size=(17, 30), bar_color=('#ffaf5f', alt_background), key='-PROGRESS_BAR-'), sg.Button('About', key='-ABOUT-'), sg.Button('Exit', key='-EXIT-')],
+    [sg.Button('Generate PREMIS Records', tooltip="LET'S GOOOOOOOOOO", font=big_font, key='-LETS_GOOOO-'), sg.ProgressBar(max_value=1, size=(14, 30), bar_color=('#ffaf5f', alt_background), key='-PROGRESS_BAR-'), sg.Button('About', key='-ABOUT-'), sg.Button('Exit', key='-EXIT-')],
     [sg.Text(expand_x=True, text_color='#ffaf5f', background_color=alt_background, key='-STATUS_BAR-')]
 ]
 
